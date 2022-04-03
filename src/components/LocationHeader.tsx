@@ -5,6 +5,7 @@ import { MyTheme } from '../theme/colors';
 import { Entypo } from '@expo/vector-icons';
 import dateformat from 'dateformat';
 import { capitalize } from '../util/stringmanipulation';
+import I18n from 'i18n-js';
 
 interface Props {
   city: string;
@@ -13,10 +14,13 @@ interface Props {
 }
 
 const LocationHeader = ({ city, country, date }: Props) => {
+  const dateString =
+    dateformat(date, 'dd. ') + I18n.t(dateformat(date, 'mmmm')) + dateformat(date, ' yyyy');
+
   return (
     <View style={styles.container}>
       <View>
-        <MyText style={styles.borderFont}>{dateformat(date, 'dd, mmmm yyyy')}</MyText>
+        <MyText style={styles.borderFont}>{dateString}</MyText>
         <View style={styles.locationContainer}>
           <MyText>
             <Entypo name="location-pin" size={20} />

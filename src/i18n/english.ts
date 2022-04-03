@@ -1,4 +1,36 @@
 /* eslint-disable sort-keys */
 export const en = {
   weather: 'Weather',
+
+  wind: 'Wind',
+  pressure: 'Pressure',
+  uv_index: 'UV index',
+  humidity: 'Humidity',
+  chance_of_rain: 'Rain',
+  visibility: 'Visibility',
+
+  // Months
+  Jan: 'Jan',
+  Feb: 'Feb',
+  Mar: 'Mar',
+  Apr: 'Apr',
+  May: 'May',
+  Jun: 'Jun',
+  Jul: 'Jul',
+  Aug: 'Aug',
+  Sep: 'Sep',
+  Oct: 'Oct',
+  Nov: 'Nov',
+  Dec: 'Dec',
+  January: 'January',
+  February: 'February',
+  March: 'March',
+  April: 'April',
+  June: 'June',
+  July: 'July',
+  August: 'August',
+  September: 'September',
+  October: 'October',
+  November: 'November',
+  December: 'December',
 };
