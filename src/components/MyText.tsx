@@ -9,7 +9,7 @@ interface Props {
   style?: StyleProp<TextStyle>;
 }
 
-const Text = ({ children, style }: Props) => {
+const MyText = ({ children, style }: Props) => {
   const [fontsLoaded] = useFonts({
     Jost_400Regular,
   });
@@ -23,7 +23,7 @@ const Text = ({ children, style }: Props) => {
   );
 };
 
-export default Text;
+export default MyText;
 
 const styles = StyleSheet.create({
   font: {

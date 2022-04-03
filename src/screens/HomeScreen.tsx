@@ -1,31 +1,26 @@
 import React from 'react';
-// import { StyleSheet, View, Text } from 'react-native';
-import { ImageBackground, StyleSheet, View, Image } from 'react-native';
-import Text from '../components/Text';
-import { MyTheme } from '../theme/colors';
-import backgroundImage from '../../assets/worldBackground.png';
+import { Image, ImageBackground, StyleSheet, View } from 'react-native';
 import weatherIcon from '../../assets/3dWeatherIcons/sun/30.png';
+import backgroundImage from '../../assets/worldBackground.png';
+import LocationHeader from '../components/LocationHeader';
+import MyText from '../components/MyText';
+import { MyTheme } from '../theme/colors';
 
 const HomeScreen = () => {
   return (
     <View style={[styles.container, { backgroundColor: MyTheme.colors.background }]}>
-      <View style={{ paddingHorizontal: 15, paddingTop: 15 }}>
-        <Text style={{ color: MyTheme.colors.border }}>22, April 2021</Text>
-        <View style={{ flexDirection: 'row', alignItems: 'flex-end', marginBottom: 50 }}>
-          <Text>London, </Text>
-          <Text style={{ color: MyTheme.colors.border }}>United Kingdom</Text>
-        </View>
-      </View>
+      <LocationHeader date={Date.now()} city="essen" country="germany" />
       <View style={{ justifyContent: 'center', alignItems: 'center' }}>
         <ImageBackground
           source={backgroundImage}
           resizeMode="cover"
           style={{
             minWidth: '100%',
-            minHeight: 230,
+            minHeight: 250,
             aspectRatio: 960 / 491,
-            paddingTop: 5,
+            paddingTop: 10,
             alignItems: 'center',
+            marginLeft: 25,
           }}
           blurRadius={5}
         >
@@ -34,11 +29,11 @@ const HomeScreen = () => {
             style={{ width: '40%', maxHeight: 190, aspectRatio: 27 / 29 }}
           />
         </ImageBackground>
-        <View style={{ alignItems: 'center', marginTop: -15 }}>
-          <Text>Thunder</Text>
-          <Text style={{ fontSize: 76 }}>
-            21<Text style={{ fontSize: 76, color: MyTheme.colors.primary }}>°</Text>
-          </Text>
+        <View style={{ alignItems: 'center', marginTop: -20 }}>
+          <MyText>Thunder</MyText>
+          <MyText style={{ fontSize: 76 }}>
+            21<MyText style={{ fontSize: 76, color: MyTheme.colors.primary }}>°</MyText>
+          </MyText>
         </View>
       </View>
     </View>
