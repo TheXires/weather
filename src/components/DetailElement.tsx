@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   circle: {
-    backgroundColor: MyTheme.colors.border,
+    backgroundColor: '#333333',
     height: 50,
     width: 50,
     borderRadius: 25,
