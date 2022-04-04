@@ -1,5 +1,5 @@
-import { ScrollView, StyleSheet, Text, View } from 'react-native';
 import React from 'react';
+import { ScrollView, StyleSheet } from 'react-native';
 import ForecastElement from './ForecastElement';
 
 const HourForecast = () => {
@@ -7,7 +7,7 @@ const HourForecast = () => {
     <ScrollView
       horizontal
       showsHorizontalScrollIndicator={false}
-      snapToInterval={110}
+      snapToInterval={116}
       style={styles.container}
     >
       <ForecastElement time={Date.now()} temperature={2} icon="" />

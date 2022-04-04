@@ -6,10 +6,16 @@ interface Props {
   icon: string;
   maxHeight: number;
   style?: StyleProp<ImageStyle>;
+  inRow?: boolean;
 }
 
-const WeatherIcon = ({ icon, maxHeight, style }: Props) => {
-  return <Image source={weatherIcon} style={[{ aspectRatio: 27 / 29, maxHeight }, style]} />;
+const WeatherIcon = ({ icon, maxHeight, style, inRow = false }: Props) => {
+  return (
+    <Image
+      source={weatherIcon}
+      style={[{ aspectRatio: 27 / 29 }, inRow ? { maxWidth: maxHeight } : { maxHeight }, style]}
+    />
+  );
 };
 
 export default WeatherIcon;

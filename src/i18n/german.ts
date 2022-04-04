@@ -1,6 +1,7 @@
 /* eslint-disable sort-keys */
 export const de = {
   weather: 'Wetter',
+  forecast: 'Vorhersage',
 
   wind: 'Wind',
   pressure: 'Druck',

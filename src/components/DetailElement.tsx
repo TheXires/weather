@@ -29,7 +29,6 @@ export default DetailElement;
 const styles = StyleSheet.create({
   container: {
     width: 61,
-    height: 100,
     marginHorizontal: 15,
     alignItems: 'center',
   },

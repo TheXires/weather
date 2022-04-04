@@ -14,9 +14,11 @@ const MainData = () => {
         style={styles.backgroundImage}
         blurRadius={5}
       >
-        <WeatherIcon icon="" maxHeight={190} />
+        <View style={styles.backgroundImageAdjustment}>
+          <WeatherIcon icon="" maxHeight={190} />
+        </View>
       </ImageBackground>
-      <View style={{ alignItems: 'center', marginTop: -20 }}>
+      <View style={styles.bottomContainer}>
         <MyText>Thunder</MyText>
         <MyText style={styles.temperature}>
           21<MyText style={styles.degree}>°</MyText>
@@ -40,6 +42,13 @@ const styles = StyleSheet.create({
     paddingTop: 10,
     alignItems: 'center',
     marginLeft: 25,
+  },
+  backgroundImageAdjustment: {
+    marginLeft: -25,
+  },
+  bottomContainer: {
+    alignItems: 'center',
+    marginTop: -20,
   },
   temperature: {
     fontSize: 76,
