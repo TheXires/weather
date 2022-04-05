@@ -8,7 +8,7 @@ import WeatherIcon from './WeatherIcon';
 const OverViewHeader = () => {
   return (
     <BlurView style={styles.container} intensity={20}>
-      <WeatherIcon icon="" maxHeight={110} inRow />
+      <WeatherIcon weatherIcon="atmosphere" maxHeight={110} inRow />
       <View style={{ flexDirection: 'row', alignItems: 'baseline' }}>
         <View>
           <MyText style={{ fontSize: 56 }}>

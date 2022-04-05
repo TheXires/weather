@@ -4,17 +4,18 @@ import WeatherIcon from './WeatherIcon';
 import MyText from './MyText';
 import dateFormat from 'dateformat';
 import { MyTheme } from '../theme/colors';
+import { WeatherIconName } from '../types/weather';
 
 interface Props {
-  icon: string;
+  weatherIcon: WeatherIconName;
   time: number;
   temperature: number;
 }
 
-const ForecastElement = ({ icon, time, temperature }: Props) => {
+const ForecastElement = ({ weatherIcon, time, temperature }: Props) => {
   return (
     <View style={styles.container}>
-      <WeatherIcon icon={icon} maxHeight={70} />
+      <WeatherIcon weatherIcon={weatherIcon} maxHeight={70} />
       <MyText style={styles.time}>{dateFormat(time, 'HH:MM')}</MyText>
       <MyText style={styles.temperature}>{temperature}°</MyText>
     </View>

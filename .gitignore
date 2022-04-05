@@ -13,3 +13,7 @@ assets/3d*
 
 # macOS
 .DS_Store
+
+
+# while dev
+api

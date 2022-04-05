@@ -20,7 +20,7 @@ const LocationHeader = ({ city, country, date }: Props) => {
   const navigation = useNavigation<MainPageNavigationProp>();
 
   const dateString =
-    dateformat(date, 'dd. ') + I18n.t(dateformat(date, 'mmmm')) + dateformat(date, ' yyyy');
+    dateformat(date, 'dd. ') + I18n.t(dateformat(date, 'mmmm')) + dateformat(date, ' yyyy - HH:MM');
 
   const goToSearch = () => {
     navigation.navigate('Search');

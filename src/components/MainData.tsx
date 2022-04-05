@@ -4,8 +4,14 @@ import backgroundImage from '../../assets/worldBackground.png';
 import MyText from './MyText';
 import { MyTheme } from '../theme/colors';
 import WeatherIcon from './WeatherIcon';
+import { WeatherIconName } from '../types/weather';
 
-const MainData = () => {
+interface Props {
+  weatherIcon: WeatherIconName;
+  temperature: number;
+}
+
+const MainData = ({ weatherIcon, temperature }: Props) => {
   return (
     <View style={styles.container}>
       <ImageBackground
@@ -15,13 +21,14 @@ const MainData = () => {
         blurRadius={5}
       >
         <View style={styles.backgroundImageAdjustment}>
-          <WeatherIcon icon="" maxHeight={190} />
+          <WeatherIcon weatherIcon={weatherIcon} maxHeight={190} />
         </View>
       </ImageBackground>
       <View style={styles.bottomContainer}>
         <MyText>Thunder</MyText>
         <MyText style={styles.temperature}>
-          21<MyText style={styles.degree}>°</MyText>
+          {temperature}
+          <MyText style={styles.degree}>°</MyText>
         </MyText>
       </View>
     </View>

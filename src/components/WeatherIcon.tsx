@@ -1,19 +1,21 @@
-import { StyleSheet, Image, ImageStyle, StyleProp } from 'react-native';
 import React from 'react';
-import weatherIcon from '../../assets/3dWeatherIcons/sun/30.png';
+import { Image, ImageStyle, StyleProp, StyleSheet } from 'react-native';
+import { WeatherIconName } from '../types/weather';
+import { getWeatherIcon } from '../util/icons';
 
 interface Props {
-  icon: string;
+  weatherIcon: WeatherIconName;
   maxHeight: number;
   style?: StyleProp<ImageStyle>;
   inRow?: boolean;
 }
 
-const WeatherIcon = ({ icon, maxHeight, style, inRow = false }: Props) => {
+const WeatherIcon = ({ weatherIcon, maxHeight, style, inRow = false }: Props) => {
   return (
     <Image
-      source={weatherIcon}
-      style={[{ aspectRatio: 27 / 29 }, inRow ? { maxWidth: maxHeight } : { maxHeight }, style]}
+      source={getWeatherIcon(weatherIcon)}
+      style={[inRow ? { maxWidth: maxHeight } : { maxHeight }, style]}
+      resizeMode="contain"
     />
   );
 };

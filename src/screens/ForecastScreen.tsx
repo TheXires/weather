@@ -23,7 +23,7 @@ const ForecastScreen = () => {
       <FlatList
         data={dummyData}
         keyExtractor={(item) => item.toString()}
-        renderItem={({ item, index }) => <ForecastRow i={index} />}
+        renderItem={({ item, index }) => <ForecastRow weatherIcon="snow" i={index} />}
         showsVerticalScrollIndicator={false}
         style={styles.flatListContainer}
       />

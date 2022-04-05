@@ -1,14 +1,16 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import { MyTheme } from '../theme/colors';
+import { WeatherIconName } from '../types/weather';
 import MyText from './MyText';
 import WeatherIcon from './WeatherIcon';
 
 interface Props {
+  weatherIcon: WeatherIconName;
   i: number;
 }
 
-const ForecastRow = ({ i }: Props) => {
+const ForecastRow = ({ i, weatherIcon }: Props) => {
   return (
     <View style={styles.outerContainer}>
       <View style={styles.innerContainer}>
@@ -17,7 +19,7 @@ const ForecastRow = ({ i }: Props) => {
         </View>
         <View style={styles.weatherContainer}>
           <View>
-            <WeatherIcon icon="" maxHeight={30} />
+            <WeatherIcon weatherIcon={weatherIcon} maxHeight={30} />
           </View>
           <MyText style={styles.weatherDescription}>Sunny</MyText>
         </View>
