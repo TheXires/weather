@@ -1,9 +1,9 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import react, { createContext, useEffect, useState } from 'react';
+import { createContext, useEffect, useState } from 'react';
 import { getWeather } from '../api/openWeather';
+import { CURRENT } from '../constants';
 import { WeatherContextType } from '../types/context';
 import { Weather } from '../types/weather';
-import { CURRENT } from '../constants';
 
 export const WeatherContext = createContext({} as WeatherContextType);
 
