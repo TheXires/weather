@@ -1,10 +1,10 @@
-import { StyleSheet, Text, View } from 'react-native';
-import React from 'react';
-import WeatherIcon from './WeatherIcon';
-import MyText from './MyText';
 import dateFormat from 'dateformat';
+import React from 'react';
+import { StyleSheet, View } from 'react-native';
 import { MyTheme } from '../theme/colors';
 import { WeatherIconName } from '../types/weather';
+import MyText from './MyText';
+import WeatherIcon from './WeatherIcon';
 
 interface Props {
   weatherIcon: WeatherIconName;

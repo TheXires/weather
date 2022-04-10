@@ -1,13 +1,11 @@
 import {
-  CurrentWeather,
-  CurrentWeatherOpenWeather,
-  DailyWeather,
+  CurrentWeather, DailyWeather,
   DailyWeatherOpenWeather,
   HourlyWeather,
   HourlyWeatherOpenWeather,
   Weather,
   WeatherIconName,
-  WeatherOpenWeather,
+  WeatherOpenWeather
 } from '../types/weather';
 
 /**
@@ -19,7 +17,7 @@ import {
 export const openWeatherToGeneric = (openWeather: WeatherOpenWeather): Weather => {
   const currentWeather: CurrentWeather = {
     clouds: openWeather.current.clouds,
-    description: openWeather.current.weather[0].main.toLowerCase(),
+    description: openWeather.current.weather[0].description,
     humidity: openWeather.current.humidity,
     icon: mapIconFromOpenWeather(
       openWeather.current.weather[0].id,
@@ -44,7 +42,7 @@ export const openWeatherToGeneric = (openWeather: WeatherOpenWeather): Weather =
 
     hourlyWeather.push({
       clouds: element.clouds,
-      description: element.weather[0].main.toLowerCase(),
+      description: element.weather[0].description,
       humidity: element.humidity,
       icon: mapIconFromOpenWeather(element.weather[0].id, element.weather[0].icon),
       pressure: element.pressure,
@@ -63,7 +61,7 @@ export const openWeatherToGeneric = (openWeather: WeatherOpenWeather): Weather =
   openWeather.daily.forEach((element: DailyWeatherOpenWeather) => {
     dailyWeather.push({
       clouds: element.clouds,
-      dew_point: element.dew_point,
+      description: element.weather[0].description,
       humidity: element.humidity,
       icon: mapIconFromOpenWeather(element.weather[0].id, element.weather[0].icon),
       moon_phase: element.moon_phase,

@@ -1,4 +1,3 @@
-import I18n from 'i18n-js';
 import React from 'react';
 import { ImageBackground, StyleSheet, View } from 'react-native';
 import backgroundImage from '../../assets/worldBackground.png';
@@ -25,7 +24,7 @@ const MainData = ({ weather }: Props) => {
         </View>
       </ImageBackground>
       <View style={styles.bottomContainer}>
-        <MyText>{I18n.t(weather.description)}</MyText>
+        <MyText>{weather.description}</MyText>
         <MyText style={styles.temperature}>
           {weather.temperature}
           <MyText style={styles.degree}>°</MyText>

@@ -54,9 +54,9 @@ export interface HourlyWeather {
 
 export interface DailyWeather {
   clouds: number;
-  dew_point: number;
+  description: string;
   humidity: number;
-  icon: string;
+  icon: WeatherIconName;
   moon_phase: number;
   moonrise: number;
   moonset: number;

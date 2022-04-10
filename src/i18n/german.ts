@@ -26,7 +26,23 @@ export const de = {
   chance_of_rain: 'Regen',
   visibility: 'Sichtweite',
 
-  // months
+  // Days
+  Sun: 'So',
+  Mon: 'Mo',
+  Tue: 'Di',
+  Wed: 'Mi',
+  Thu: 'Do',
+  Fri: 'Fr',
+  Sat: 'Sa',
+  Sunday: 'Sonntag',
+  Monday: 'Montag',
+  Tuesday: 'Dienstag',
+  Wednesday: 'Mittwoch',
+  Thursday: 'Donnerstag',
+  Friday: 'Freitag',
+  Saturday: 'Samstag',
+
+  // Months
   Jan: 'Jan',
   Feb: 'Feb',
   Mar: 'Mar',

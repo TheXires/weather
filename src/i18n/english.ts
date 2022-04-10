@@ -26,6 +26,22 @@ export const en = {
   chance_of_rain: 'Rain',
   visibility: 'Visibility',
 
+  // Days
+  Sun: 'Sun',
+  Mon: 'Mon',
+  Tue: 'Tue',
+  Wed: 'Wed',
+  Thu: 'Thu',
+  Fri: 'Fri',
+  Sat: 'Sat',
+  Sunday: 'Sunday',
+  Monday: 'Monday',
+  Tuesday: 'Tuesday',
+  Wednesday: 'Wednesday',
+  Thursday: 'Thursday',
+  Friday: 'Friday',
+  Saturday: 'Saturday',
+
   // Months
   Jan: 'Jan',
   Feb: 'Feb',

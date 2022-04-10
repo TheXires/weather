@@ -1,11 +1,11 @@
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import React from 'react';
-import { useNavigation } from '@react-navigation/native';
-import { ForecastPageNavigationProp } from '../types/navigation';
 import { Feather } from '@expo/vector-icons';
-import MyText from './MyText';
+import { useNavigation } from '@react-navigation/native';
 import I18n from 'i18n-js';
+import React from 'react';
+import { StyleSheet, TouchableOpacity, View } from 'react-native';
 import { MyTheme } from '../theme/colors';
+import { ForecastPageNavigationProp } from '../types/navigation';
+import MyText from './MyText';
 
 const TopBar = () => {
   const navigation = useNavigation<ForecastPageNavigationProp>();

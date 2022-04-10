@@ -1,4 +1,4 @@
-import { DarkTheme, DefaultTheme, Theme } from '@react-navigation/native';
+import { DefaultTheme, Theme } from '@react-navigation/native';
 
 /**
  * Custom light theme based on default light theme with changed primary color

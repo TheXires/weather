@@ -1,20 +1,25 @@
 import { BlurView } from 'expo-blur';
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
+import { CurrentWeather } from '../types/weather';
 import DetailElement from './DetailElement';
 
-const DetailCard = () => {
+interface Props {
+  weather: CurrentWeather;
+}
+
+const DetailCard = ({ weather }: Props) => {
   return (
     <BlurView style={styles.container} intensity={20}>
       <View style={styles.row}>
-        <DetailElement icon="wind" value="s 9 m/s" />
-        <DetailElement icon="droplet" value="85%" />
-        <DetailElement icon="cloud-drizzle" value="75%" />
+        <DetailElement icon="wind" value={`${weather.wind_speed} m/s`} />
+        <DetailElement icon="droplet" value={`${weather.humidity}%`} />
+        <DetailElement icon="cloud" value={`${weather.clouds}%`} />
       </View>
       <View style={styles.row}>
-        <DetailElement icon="sun" value="4 UV" />
-        <DetailElement icon="loader" value="778,3" />
-        <DetailElement icon="eye" value="9,7 km" />
+        <DetailElement icon="sun" value={`${weather.uvi} UV`} />
+        <DetailElement icon="loader" value={`${weather.pressure} hPa`} />
+        <DetailElement icon="eye" value={`${weather.visibility / 1000} km`} />
       </View>
     </BlurView>
   );

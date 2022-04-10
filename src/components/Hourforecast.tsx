@@ -21,6 +21,7 @@ const HourForecast = ({ forecast }: Props) => {
             time={hour.time}
             temperature={hour.temperature}
             weatherIcon={hour.icon}
+            key={hour.time}
           />
         );
       })}

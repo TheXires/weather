@@ -1,7 +1,7 @@
-import { StyleSheet, Text, View } from 'react-native';
-import React from 'react';
-import { MyTheme } from '../theme/colors';
 import { Feather } from '@expo/vector-icons';
+import React from 'react';
+import { StyleSheet, View } from 'react-native';
+import { MyTheme } from '../theme/colors';
 import MyText from './MyText';
 
 interface Props {

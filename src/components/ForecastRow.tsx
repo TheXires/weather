@@ -1,31 +1,35 @@
+import dateFormat from 'dateformat';
+import I18n from 'i18n-js';
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import { MyTheme } from '../theme/colors';
-import { WeatherIconName } from '../types/weather';
+import { DailyWeather } from '../types/weather';
 import MyText from './MyText';
 import WeatherIcon from './WeatherIcon';
 
 interface Props {
-  weatherIcon: WeatherIconName;
-  i: number;
+  weather: DailyWeather;
 }
 
-const ForecastRow = ({ i, weatherIcon }: Props) => {
+const ForecastRow = ({ weather }: Props) => {
+  console.log('ForecastRow');
+  console.log(weather);
+
   return (
     <View style={styles.outerContainer}>
       <View style={styles.innerContainer}>
-        <View>
-          <MyText>{i}</MyText>
+        <View style={styles.dayContainer}>
+          <MyText>{I18n.t(dateFormat(weather.time, 'ddd'))}</MyText>
         </View>
         <View style={styles.weatherContainer}>
           <View>
-            <WeatherIcon weatherIcon={weatherIcon} maxHeight={30} />
+            <WeatherIcon weatherIcon={weather.icon} maxHeight={40} inRow />
           </View>
-          <MyText style={styles.weatherDescription}>Sunny</MyText>
+          <MyText style={styles.weatherDescription}>{weather.description}</MyText>
         </View>
         <View style={styles.degreeContainer}>
-          <MyText>24</MyText>
-          <MyText style={{ color: MyTheme.colors.border, marginLeft: 10 }}>18</MyText>
+          <MyText style={styles.degreeDay}>{weather.temperature_day}</MyText>
+          <MyText style={styles.degreeNight}>{weather.temperature_night}</MyText>
         </View>
       </View>
     </View>
@@ -51,13 +55,27 @@ const styles = StyleSheet.create({
   weatherContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'center',
     width: '50%',
   },
   weatherDescription: {
     marginLeft: 10,
   },
   degreeContainer: {
+    width: '25%',
     flexDirection: 'row',
+    justifyContent: 'flex-end',
+  },
+  degreeDay: {
+    width: 25,
+    textAlign: 'right',
+  },
+  degreeNight: {
+    width: 25,
+    textAlign: 'right',
+    color: MyTheme.colors.border,
+    marginLeft: 5,
+  },
+  dayContainer: {
+    width: '25%',
   },
 });

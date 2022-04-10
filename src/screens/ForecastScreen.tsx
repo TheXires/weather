@@ -1,12 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { FlatList, Image, Platform, StyleSheet, View } from 'react-native';
 import backgroundImage from '../../assets/worldBackground.png';
 import DetailCard from '../components/DetailCard';
 import ForecastRow from '../components/ForecastRow';
 import OverViewHeader from '../components/OverViewHeader';
 import TopBar from '../components/TopBar';
+import { WeatherContext } from '../contexts/WeatherContext';
+import { WeatherContextType } from '../types/context';
 
 const ForecastScreen = () => {
+  const { currentWeather, dailyForecast } = useContext<WeatherContextType>(WeatherContext);
+
+  if (currentWeather == null || dailyForecast == null) return null;
   const dummyData = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17];
 
   return (
@@ -18,12 +23,16 @@ const ForecastScreen = () => {
         blurRadius={Platform.OS === 'ios' ? 0 : 5}
       />
       <TopBar />
-      <OverViewHeader />
-      <DetailCard />
+      <OverViewHeader
+        weather={currentWeather}
+        temperature_day={dailyForecast[0].temperature_day}
+        temperature_night={dailyForecast[0].temperature_night}
+      />
+      <DetailCard weather={currentWeather} />
       <FlatList
-        data={dummyData}
-        keyExtractor={(item) => item.toString()}
-        renderItem={({ item, index }) => <ForecastRow weatherIcon="snow" i={index} />}
+        data={dailyForecast}
+        keyExtractor={(item) => item.time.toString()}
+        renderItem={({ item }) => <ForecastRow weather={item} />}
         showsVerticalScrollIndicator={false}
         style={styles.flatListContainer}
       />

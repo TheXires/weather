@@ -1,9 +1,8 @@
-import { StyleSheet, Text, View } from 'react-native';
 import React from 'react';
-import DetailElement from './DetailElement';
+import { StyleSheet } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
-import I18n from 'i18n-js';
 import { CurrentWeather } from '../types/weather';
+import DetailElement from './DetailElement';
 
 interface Props {
   weather: CurrentWeather;
