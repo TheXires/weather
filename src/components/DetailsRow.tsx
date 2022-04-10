@@ -3,8 +3,13 @@ import React from 'react';
 import DetailElement from './DetailElement';
 import { ScrollView } from 'react-native-gesture-handler';
 import I18n from 'i18n-js';
+import { CurrentWeather } from '../types/weather';
 
-const DetailsRow = () => {
+interface Props {
+  weather: CurrentWeather;
+}
+
+const DetailsRow = ({ weather }: Props) => {
   return (
     <ScrollView
       horizontal
@@ -12,12 +17,12 @@ const DetailsRow = () => {
       snapToInterval={91}
       style={styles.container}
     >
-      <DetailElement icon="wind" value="s 9 m/s" />
-      <DetailElement icon="droplet" value="85%" />
-      <DetailElement icon="cloud-drizzle" value="75%" />
-      <DetailElement icon="sun" value="4 UV" />
-      <DetailElement icon="loader" value="778,3" />
-      <DetailElement icon="eye" value="9,7 km" />
+      <DetailElement icon="wind" value={`${weather.wind_speed} m/s`} />
+      <DetailElement icon="droplet" value={`${weather.humidity}%`} />
+      <DetailElement icon="cloud" value={`${weather.clouds}%`} />
+      <DetailElement icon="sun" value={`${weather.uvi} UV`} />
+      <DetailElement icon="loader" value={`${weather.pressure} hPa`} />
+      <DetailElement icon="eye" value={`${weather.visibility / 1000} km`} />
     </ScrollView>
   );
 };

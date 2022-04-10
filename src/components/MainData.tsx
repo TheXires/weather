@@ -1,17 +1,17 @@
-import { StyleSheet, Image, ImageBackground, View } from 'react-native';
+import I18n from 'i18n-js';
 import React from 'react';
+import { ImageBackground, StyleSheet, View } from 'react-native';
 import backgroundImage from '../../assets/worldBackground.png';
-import MyText from './MyText';
 import { MyTheme } from '../theme/colors';
+import { CurrentWeather } from '../types/weather';
+import MyText from './MyText';
 import WeatherIcon from './WeatherIcon';
-import { WeatherIconName } from '../types/weather';
 
 interface Props {
-  weatherIcon: WeatherIconName;
-  temperature: number;
+  weather: CurrentWeather;
 }
 
-const MainData = ({ weatherIcon, temperature }: Props) => {
+const MainData = ({ weather }: Props) => {
   return (
     <View style={styles.container}>
       <ImageBackground
@@ -21,13 +21,13 @@ const MainData = ({ weatherIcon, temperature }: Props) => {
         blurRadius={5}
       >
         <View style={styles.backgroundImageAdjustment}>
-          <WeatherIcon weatherIcon={weatherIcon} maxHeight={190} />
+          <WeatherIcon weatherIcon={weather.icon} maxHeight={190} />
         </View>
       </ImageBackground>
       <View style={styles.bottomContainer}>
-        <MyText>Thunder</MyText>
+        <MyText>{I18n.t(weather.description)}</MyText>
         <MyText style={styles.temperature}>
-          {temperature}
+          {weather.temperature}
           <MyText style={styles.degree}>°</MyText>
         </MyText>
       </View>

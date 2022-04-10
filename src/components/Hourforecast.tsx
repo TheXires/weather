@@ -1,8 +1,13 @@
 import React from 'react';
 import { ScrollView, StyleSheet } from 'react-native';
+import { HourlyWeather } from '../types/weather';
 import ForecastElement from './ForecastElement';
 
-const HourForecast = () => {
+interface Props {
+  forecast: HourlyWeather[];
+}
+
+const HourForecast = ({ forecast }: Props) => {
   return (
     <ScrollView
       horizontal
@@ -10,18 +15,15 @@ const HourForecast = () => {
       snapToInterval={116}
       style={styles.container}
     >
-      <ForecastElement time={Date.now()} temperature={2} weatherIcon="atmosphere" />
-      <ForecastElement time={Date.now()} temperature={3} weatherIcon="clearsky_day" />
-      <ForecastElement time={Date.now()} temperature={2} weatherIcon="clearsky_night" />
-      <ForecastElement time={Date.now()} temperature={2} weatherIcon="cloudy" />
-      <ForecastElement time={Date.now()} temperature={3} weatherIcon="fair_day" />
-      <ForecastElement time={Date.now()} temperature={2} weatherIcon="fair_night" />
-      <ForecastElement time={Date.now()} temperature={2} weatherIcon="rain" />
-      <ForecastElement time={Date.now()} temperature={3} weatherIcon="snow" />
-      <ForecastElement time={Date.now()} temperature={2} weatherIcon="snowrain" />
-      <ForecastElement time={Date.now()} temperature={2} weatherIcon="thunderstorm" />
-      <ForecastElement time={Date.now()} temperature={3} weatherIcon="atmosphere" />
-      <ForecastElement time={Date.now()} temperature={2} weatherIcon="clearsky_day" />
+      {forecast.map((hour: HourlyWeather) => {
+        return (
+          <ForecastElement
+            time={hour.time}
+            temperature={hour.temperature}
+            weatherIcon={hour.icon}
+          />
+        );
+      })}
     </ScrollView>
   );
 };

@@ -10,18 +10,18 @@ import { MyTheme } from '../theme/colors';
 import { WeatherContextType } from '../types/context';
 
 const HomeScreen = () => {
-  const { currentWeather } = useContext<WeatherContextType>(WeatherContext);
+  const { currentWeather, hourlyForecast } = useContext<WeatherContextType>(WeatherContext);
 
-  if (currentWeather == null) return null;
+  if (currentWeather == null || hourlyForecast == null) return null;
 
   return (
     <View style={[styles.container, { backgroundColor: MyTheme.colors.background }]}>
       <LocationHeader date={currentWeather.time} city="essen" country="germany" />
-      <MainData temperature={currentWeather.temperature} weatherIcon={currentWeather.icon} />
+      <MainData weather={currentWeather} />
       <Spacer height={30} />
-      <HourForecast />
+      <HourForecast forecast={hourlyForecast} />
       <Spacer height={30} />
-      <DetailsRow />
+      <DetailsRow weather={currentWeather} />
     </View>
   );
 };
