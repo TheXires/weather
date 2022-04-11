@@ -1,3 +1,4 @@
+import I18n from 'i18n-js';
 import React, { useContext } from 'react';
 import { FlatList, Image, Platform, StyleSheet, View } from 'react-native';
 import backgroundImage from '../../assets/worldBackground.png';
@@ -22,7 +23,7 @@ const ForecastScreen = () => {
         style={styles.backgroundImage}
         blurRadius={Platform.OS === 'ios' ? 0 : 5}
       />
-      <TopBar />
+      <TopBar heading={I18n.t('forecast')} />
       <OverViewHeader
         weather={currentWeather}
         temperature_day={dailyForecast[0].temperature_day}

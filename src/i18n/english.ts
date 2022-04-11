@@ -2,6 +2,9 @@
 export const en = {
   weather: 'Weather',
   forecast: 'Forecast',
+  search: 'Search for City',
+
+  city: 'City',
 
   // errors
   missingPermissions: 'Missing Permissions',

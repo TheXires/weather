@@ -10,7 +10,6 @@ import Spacer from '../components/Spacer';
 import { WeatherContext } from '../contexts/WeatherContext';
 import { MyTheme } from '../theme/colors';
 import { WeatherContextType } from '../types/context';
-import { Feather } from '@expo/vector-icons';
 
 const HomeScreen = () => {
   const { currentWeather, hourlyForecast, city, country } =

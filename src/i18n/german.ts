@@ -2,6 +2,9 @@
 export const de = {
   weather: 'Wetter',
   forecast: 'Vorhersage',
+  search: 'Suche nach einer Stadt',
+
+  city: 'Stadt',
 
   // errors
   missingPermissions: 'Fehlende Berechtigungen',

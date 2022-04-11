@@ -4,11 +4,14 @@ import I18n from 'i18n-js';
 import React from 'react';
 import { StyleSheet, TouchableOpacity, View } from 'react-native';
 import { MyTheme } from '../theme/colors';
-import { ForecastPageNavigationProp } from '../types/navigation';
 import MyText from './MyText';
 
-const TopBar = () => {
-  const navigation = useNavigation<ForecastPageNavigationProp>();
+interface Props {
+  heading: string;
+}
+
+const TopBar = ({ heading }: Props) => {
+  const navigation = useNavigation();
 
   const goBack = () => {
     navigation.goBack();
@@ -21,7 +24,7 @@ const TopBar = () => {
         </TouchableOpacity>
       </View>
       <View style={styles.headingContainer}>
-        <MyText style={styles.heading}>{I18n.t('forecast')}</MyText>
+        <MyText style={styles.heading}>{heading}</MyText>
       </View>
       <View style={styles.spread}></View>
     </View>
@@ -32,6 +35,7 @@ export default TopBar;
 
 const styles = StyleSheet.create({
   container: {
+    position: 'relative',
     width: '100%',
     height: 50,
     alignItems: 'center',
@@ -40,10 +44,11 @@ const styles = StyleSheet.create({
     marginBottom: 15,
   },
   spread: {
-    width: '30%',
+    position: 'absolute',
+    zIndex: 99,
   },
   headingContainer: {
-    width: '30%',
+    width: '100%',
     justifyContent: 'center',
     alignItems: 'center',
   },
