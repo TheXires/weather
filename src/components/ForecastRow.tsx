@@ -12,9 +12,6 @@ interface Props {
 }
 
 const ForecastRow = ({ weather }: Props) => {
-  console.log('ForecastRow');
-  console.log(weather);
-
   return (
     <View style={styles.outerContainer}>
       <View style={styles.innerContainer}>
@@ -55,7 +52,7 @@ const styles = StyleSheet.create({
   weatherContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    width: '50%',
+    width: '60%',
   },
   weatherDescription: {
     marginLeft: 10,
@@ -76,6 +73,6 @@ const styles = StyleSheet.create({
     marginLeft: 5,
   },
   dayContainer: {
-    width: '25%',
+    width: '15%',
   },
 });

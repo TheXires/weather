@@ -1,0 +1,34 @@
+[
+  {
+    "name": "Essen",
+    "local_names": {
+      "ar": "إسن",
+      "ru": "Эссен",
+      "th": "เอสเซิน",
+      "lv": "Esene",
+      "la": "Assindia",
+      "ja": "エッセン",
+      "el": "Έσση",
+      "uk": "Ессен",
+      "ug": "Ésén",
+      "kk": "Эссен",
+      "lt": "Esenas",
+      "ko": "에센",
+      "sr": "Есен",
+      "hu": "Essen",
+      "de": "Essen",
+      "mr": "एसेन",
+      "zh": "埃森",
+      "ka": "ესენი",
+      "li": "Esse",
+      "fa": "اسن",
+      "bg": "Есен",
+      "cs": "Essen",
+      "he": "אסן"
+    },
+    "lat": 51.4582235,
+    "lon": 7.0158171,
+    "country": "DE",
+    "state": "North Rhine-Westphalia"
+  }
+]

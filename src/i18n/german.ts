@@ -3,6 +3,17 @@ export const de = {
   weather: 'Wetter',
   forecast: 'Vorhersage',
 
+  // errors
+  missingPermissions: 'Fehlende Berechtigungen',
+  missingLocationPermission:
+    'Keine Berechtigung den aktuellen Standort zu bestimmen. Um Wetterdaten basierend auf deinen Standort erhalten zu können, kannst du den Standort für diese App in den Einstellungen freigeben.',
+
+  unknown: 'Unbekannt',
+  noData: 'Keine Daten',
+  noDataForThisLocation:
+    'Keine Daten gefunden. Erlaube den Zugriff auf deinen Standort oder wähle einen Ort aus.',
+
+  // weather
   thunderstorm: 'Gewitter',
   drizzle: 'Nieselregen',
   rain: 'Regen',

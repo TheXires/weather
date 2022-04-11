@@ -1,11 +1,12 @@
 import {
-  CurrentWeather, DailyWeather,
+  CurrentWeather,
+  DailyWeather,
   DailyWeatherOpenWeather,
   HourlyWeather,
   HourlyWeatherOpenWeather,
   Weather,
   WeatherIconName,
-  WeatherOpenWeather
+  WeatherOpenWeather,
 } from '../types/weather';
 
 /**
@@ -82,8 +83,8 @@ export const openWeatherToGeneric = (openWeather: WeatherOpenWeather): Weather =
   });
 
   return {
-    lat: openWeather.lat,
-    lon: openWeather.lon,
+    lat: Number(openWeather.lat.toFixed(3)),
+    lon: Number(openWeather.lon.toFixed(3)),
     timezone: openWeather.timezone,
     timezone_offset: openWeather.timezone_offset * 1000,
     current: currentWeather,

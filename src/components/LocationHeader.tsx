@@ -1,4 +1,4 @@
-import { Pressable, StyleSheet, Text, View } from 'react-native';
+import { Alert, Pressable, StyleSheet, Text, View } from 'react-native';
 import React from 'react';
 import MyText from './MyText';
 import { MyTheme } from '../theme/colors';
@@ -14,19 +14,21 @@ interface Props {
   city: string;
   country: string;
   date: number;
+  forecastDisabled: boolean;
 }
 
-const LocationHeader = ({ city, country, date }: Props) => {
+const LocationHeader = ({ city, country, date, forecastDisabled }: Props) => {
   const navigation = useNavigation<MainPageNavigationProp>();
 
   const dateString =
-    dateformat(date, 'dd. ') + I18n.t(dateformat(date, 'mmmm')) + dateformat(date, ' yyyy - HH:MM');
+    dateformat(date, 'dd. ') + I18n.t(dateformat(date, 'mmmm')) + dateformat(date, ' yyyy');
 
   const goToSearch = () => {
     navigation.navigate('Search');
   };
 
   const goToWeekOverview = () => {
+    if (forecastDisabled) return Alert.alert(I18n.t('noData'), I18n.t('noDataForThisLocation'));
     navigation.navigate('Forecast');
   };
 
@@ -73,7 +75,6 @@ const styles = StyleSheet.create({
   locationContainer: {
     flexDirection: 'row',
     alignItems: 'flex-end',
-    marginBottom: 50,
   },
   button: {
     padding: 10,

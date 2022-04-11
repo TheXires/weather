@@ -3,6 +3,16 @@ export const en = {
   weather: 'Weather',
   forecast: 'Forecast',
 
+  // errors
+  missingPermissions: 'Missing Permissions',
+  noLocationPermission:
+    'No Permissions to request location. To get weather data based on your location, you need to enable location permission for this app in the settings.',
+
+  unknown: 'Unknown',
+  noData: 'No data',
+  noDataForThisLocation: 'No data found. Enable location access or select a location.',
+
+  // weather
   thunderstorm: 'Thunderstorm',
   drizzle: 'Drizzle',
   rain: 'Rain',
