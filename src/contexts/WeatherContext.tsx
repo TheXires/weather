@@ -1,6 +1,6 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { createContext, useEffect, useState } from 'react';
-import { getCityOpenWeather, getWeatherOpenWeather } from '../api/openWeather';
+import { getCityByLocationOpenWeather, getWeatherOpenWeather } from '../api/openWeather';
 import { LOCATION, WEATHER } from '../constants';
 import { WeatherContextType } from '../types/context';
 import { CurrentWeather, DailyWeather, HourlyWeather, Weather } from '../types/weather';
@@ -62,7 +62,7 @@ export const WeatherProvider = (props: any) => {
 
   const getCity = async () => {
     try {
-      const city = await getCityOpenWeather(location);
+      const city = await getCityByLocationOpenWeather(location);
       if (city == null) return;
 
       const lang = Localization.locale.slice(0, 2);

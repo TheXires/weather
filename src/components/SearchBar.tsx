@@ -15,7 +15,7 @@ const SearchBar = ({ input, setInput }: Props) => {
   return (
     <BlurView style={styles.container} intensity={20}>
       <View style={styles.sideContainer}>
-        <Feather name="search" size={24} color={MyTheme.colors.border} />
+        <Feather name="search" size={24} color={MyTheme.colors.text} />
       </View>
       <View style={styles.middleContainer}>
         <TextInput
@@ -30,7 +30,7 @@ const SearchBar = ({ input, setInput }: Props) => {
         activeOpacity={0.7}
         onPress={() => setInput('')}
       >
-        <Feather name="x" size={18} color={MyTheme.colors.border} />
+        <Feather name="x" size={18} color={MyTheme.colors.text} />
       </TouchableOpacity>
     </BlurView>
   );
