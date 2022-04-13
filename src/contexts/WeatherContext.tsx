@@ -1,7 +1,7 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { createContext, useEffect, useState } from 'react';
 import { getCityByLocationOpenWeather, getWeatherOpenWeather } from '../api/openWeather';
-import { LOCATION, WEATHER } from '../constants';
+import { LOCATION, USELOCATION, WEATHER } from '../constants';
 import { WeatherContextType } from '../types/context';
 import { CurrentWeather, DailyWeather, HourlyWeather, Weather } from '../types/weather';
 import * as Localization from 'expo-localization';
@@ -33,11 +33,17 @@ export const WeatherProvider = (props: any) => {
 
   const boot = async () => {
     try {
-      const currentLocation = await getLocation();
-      if (currentLocation != null) return setLocation(currentLocation);
+      const useLocation: boolean | undefined = await getFromLocalStorage(USELOCATION);
+      if (useLocation != null && useLocation === true) {
+        const currentLocation = await getLocation();
+        if (currentLocation != null) return setLocation(currentLocation);
+      }
 
       const localLocation: Location | null = await getFromLocalStorage(LOCATION);
       if (localLocation != null) return setLocation(localLocation);
+
+      const currentLocation = await getLocation();
+      if (currentLocation != null) return setLocation(currentLocation);
     } catch (error) {
       console.error('getCurrentWeatherData error: ', error);
     }

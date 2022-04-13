@@ -30,7 +30,7 @@ export default DetailCard;
 const styles = StyleSheet.create({
   container: {
     width: '90%',
-    marginTop: 15,
+    marginTop: 10,
     borderRadius: 15,
     overflow: 'hidden',
   },

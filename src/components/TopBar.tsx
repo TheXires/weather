@@ -41,7 +41,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
     flexDirection: 'row',
-    marginBottom: 15,
   },
   spread: {
     position: 'absolute',

@@ -23,6 +23,7 @@ const SearchBar = ({ input, setInput }: Props) => {
           value={input}
           onChangeText={(text: string) => setInput(text)}
           style={styles.textInput}
+          placeholderTextColor={MyTheme.colors.border}
         />
       </View>
       <TouchableOpacity

@@ -9,6 +9,8 @@ import I18n from 'i18n-js';
 import { useNavigation } from '@react-navigation/native';
 import { MainPageNavigationProp } from '../types/navigation';
 import { TouchableOpacity } from 'react-native-gesture-handler';
+import { getFromLocalStorage } from '../util/localStorage';
+import { USELOCATION } from '../constants';
 
 interface Props {
   city: string;

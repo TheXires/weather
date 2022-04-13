@@ -4,6 +4,7 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 import { MyTheme } from '../theme/colors';
 import { City, Location } from '../types/location';
 import MyText from './MyText';
+import * as Localization from 'expo-localization';
 
 interface Props {
   city: City;
@@ -11,13 +12,22 @@ interface Props {
 }
 
 const SearchResultRow = ({ city, onPress }: Props) => {
+  const lang = Localization.locale.slice(0, 2);
+
   return (
     <TouchableOpacity
       style={styles.container}
       onPress={() => onPress({ lat: city.lat, lon: city.lon })}
     >
-      <MyText>{city.name}</MyText>
-      <MyText style={{ color: MyTheme.colors.border }}>, {city.country}</MyText>
+      <MyText>
+        {lang !== 'en' && city?.local_names && city.local_names[lang] != null
+          ? city.local_names[lang]
+          : city.name}
+      </MyText>
+      {city.state && <MyText style={{ color: MyTheme.colors.border }}> ({city.state})</MyText>}
+      {city.country !== '' && (
+        <MyText style={{ color: MyTheme.colors.border }}>, {city.country}</MyText>
+      )}
     </TouchableOpacity>
   );
 };
@@ -32,6 +42,5 @@ const styles = StyleSheet.create({
     paddingHorizontal: 5,
     flexDirection: 'row',
     alignItems: 'center',
-    // backgroundColor: 'pink',
   },
 });

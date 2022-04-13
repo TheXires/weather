@@ -36,7 +36,7 @@ export default OverViewHeader;
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 10,
+    marginTop: 15,
     width: '90%',
     height: 150,
     borderRadius: 15,

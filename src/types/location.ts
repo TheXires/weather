@@ -5,7 +5,7 @@ export interface Location {
 
 export interface City {
   name: string;
-  local_names: any;
+  local_names?: any;
   lat: number;
   lon: number;
   country: string;
