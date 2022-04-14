@@ -1,16 +1,14 @@
-import { Alert, Pressable, StyleSheet, Text, View } from 'react-native';
-import React from 'react';
-import MyText from './MyText';
-import { MyTheme } from '../theme/colors';
 import { Entypo } from '@expo/vector-icons';
-import dateformat from 'dateformat';
-import { capitalize } from '../util/stringmanipulation';
-import I18n from 'i18n-js';
 import { useNavigation } from '@react-navigation/native';
-import { MainPageNavigationProp } from '../types/navigation';
+import dateformat from 'dateformat';
+import I18n from 'i18n-js';
+import React from 'react';
+import { Alert, StyleSheet, Text, View } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
-import { getFromLocalStorage } from '../util/localStorage';
-import { USELOCATION } from '../constants';
+import { MyTheme } from '../theme/colors';
+import { MainPageNavigationProp } from '../types/navigation';
+import { capitalize } from '../util/stringmanipulation';
+import MyText from './MyText';
 
 interface Props {
   city: string;

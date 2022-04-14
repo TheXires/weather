@@ -14,32 +14,6 @@ const ForecastScreen = () => {
   const { currentWeather, dailyForecast } = useContext<WeatherContextType>(WeatherContext);
 
   if (currentWeather == null || dailyForecast == null) return null;
-  const dummyData = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17];
-
-  // return (
-  //   <View style={styles.container}>
-  //     <Image
-  //       source={backgroundImage}
-  //       resizeMode="contain"
-  //       style={styles.backgroundImage}
-  //       blurRadius={Platform.OS === 'ios' ? 0 : 5}
-  //     />
-  //     <TopBar heading={I18n.t('forecast')} />
-  //     <OverViewHeader
-  //       weather={currentWeather}
-  //       temperature_day={dailyForecast[0].temperature_day}
-  //       temperature_night={dailyForecast[0].temperature_night}
-  //     />
-  //     <DetailCard weather={currentWeather} />
-  //     <FlatList
-  //       data={dailyForecast}
-  //       keyExtractor={(item) => item.time.toString()}
-  //       renderItem={({ item }) => <ForecastRow weather={item} />}
-  //       showsVerticalScrollIndicator={false}
-  //       style={styles.flatListContainer}
-  //     />
-  //   </View>
-  // );
 
   return (
     <View style={styles.container}>

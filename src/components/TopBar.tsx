@@ -1,6 +1,5 @@
 import { Feather } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
-import I18n from 'i18n-js';
 import React from 'react';
 import { StyleSheet, TouchableOpacity, View } from 'react-native';
 import { MyTheme } from '../theme/colors';
@@ -26,7 +25,7 @@ const TopBar = ({ heading }: Props) => {
       <View style={styles.headingContainer}>
         <MyText style={styles.heading}>{heading}</MyText>
       </View>
-      <View style={styles.spread}></View>
+      <View style={styles.spread} />
     </View>
   );
 };

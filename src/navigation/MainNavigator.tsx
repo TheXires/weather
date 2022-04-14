@@ -1,10 +1,10 @@
 import { createStackNavigator } from '@react-navigation/stack';
 import React from 'react';
+import { WeatherProvider } from '../contexts/WeatherContext';
+import ForecastScreen from '../screens/ForecastScreen';
 import HomeScreen from '../screens/HomeScreen';
 import SearchScreen from '../screens/SearchScreen';
-import ForecastScreen from '../screens/ForecastScreen';
 import { RootStackParamList } from '../types/navigation';
-import { WeatherProvider } from '../contexts/WeatherContext';
 
 const RootStack = createStackNavigator<RootStackParamList>();
 

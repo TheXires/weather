@@ -1,13 +1,13 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import * as Localization from 'expo-localization';
 import { createContext, useEffect, useState } from 'react';
-import { getCityByLocationOpenWeather, getWeatherOpenWeather } from '../api/openWeather';
+import { getCityByLocation, getWeather } from '../api/weatherApi';
 import { LOCATION, USELOCATION, WEATHER } from '../constants';
 import { WeatherContextType } from '../types/context';
-import { CurrentWeather, DailyWeather, HourlyWeather, Weather } from '../types/weather';
-import * as Localization from 'expo-localization';
 import { Location } from '../types/location';
-import { getLocation } from '../util/location';
+import { CurrentWeather, DailyWeather, HourlyWeather, Weather } from '../types/weather';
 import { getFromLocalStorage } from '../util/localStorage';
+import { getLocation } from '../util/location';
 
 export const WeatherContext = createContext({} as WeatherContextType);
 
@@ -57,7 +57,7 @@ export const WeatherProvider = (props: any) => {
 
   const refreshWeatherData = async () => {
     try {
-      const weather = await getWeatherOpenWeather(location);
+      const weather = await getWeather(location);
       if (weather == null) return;
       AsyncStorage.setItem(WEATHER, JSON.stringify(weather));
       setWeather(weather);
@@ -68,7 +68,7 @@ export const WeatherProvider = (props: any) => {
 
   const getCity = async () => {
     try {
-      const city = await getCityByLocationOpenWeather(location);
+      const city = await getCityByLocation(location);
       if (city == null) return;
 
       const lang = Localization.locale.slice(0, 2);

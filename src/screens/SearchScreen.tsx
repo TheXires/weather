@@ -4,7 +4,7 @@ import I18n from 'i18n-js';
 import React, { useContext, useEffect, useState } from 'react';
 import { Keyboard, Pressable, StyleSheet } from 'react-native';
 import { FlatList } from 'react-native-gesture-handler';
-import { getCityByNameOpenWeather } from '../api/openWeather';
+import { getCityByName } from '../api/weatherApi';
 import HorizontalLine from '../components/HorizontalLine';
 import SearchBar from '../components/SearchBar';
 import SearchResultRow from '../components/SearchResultRow';
@@ -26,7 +26,7 @@ const SearchScreen = () => {
     const delay = setTimeout(async () => {
       console.log('called');
       if (searchTerm.length < 3) return;
-      const possibleCities = await getCityByNameOpenWeather(searchTerm);
+      const possibleCities = await getCityByName(searchTerm);
       setCities(possibleCities);
       console.log(possibleCities);
     }, 1500);

@@ -1,10 +1,10 @@
+import * as Localization from 'expo-localization';
 import React from 'react';
 import { StyleSheet } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { MyTheme } from '../theme/colors';
 import { City, Location } from '../types/location';
 import MyText from './MyText';
-import * as Localization from 'expo-localization';
 
 interface Props {
   city: City;
