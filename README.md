@@ -17,3 +17,5 @@ Die Wetter-App bietet die Möglichkeit, das Wetter für die aktuelle Position od
 ## Backend
 
 Die verwendeten Daten stammen von der OpenWeather API. Über die One Call API werden die Wetterdaten für den aktuellen Tag sowie die stündlichen und täglichen Vorhersagen abgerufen. Mithilfe der Geocoding API werden die Städtenamen in Geolocations umgewandelt und umgekehrt. Damit der benötigte API-Schlüssel nicht in der App liegt und möglicherweise ausgelesen wird, wurde zwischen App und OpenWeather API eine serverless Funktion geschaltet, welche als Cloudflare Worker ausgeliefert wird.
+
+Der Code für das Backend befindet sich dabei im Repository [weather-api](https://github.com/TheXires/weather-api)
