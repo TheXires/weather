@@ -10,9 +10,9 @@ Das Design dieser Anwendung stammt von einer Designvorlage von Behanced, die mit
 
 Die Wetter-App bietet die Möglichkeit, das Wetter für die aktuelle Position oder eine beliebige Stadt anzuzeigen. Dabei gibt eine stündliche Vorschau für die nächsten 24 Stunden oder eine tägliche Vorhersage für die nächsten 7 Tage. Für den aktuellen Tag werden neben einer kurzen Beschreibung sowie der Temperatur auch Daten wie Windgeschwindigkeit, Sichtweite und der UV-Index angezeigt.
 
-![Screenshot 1](https://robin-beckmann.de/_next/image?url=%2Fimages%2Fprojects%2Fweatherapp%2Fimage1.jpg&w=128&q=75)
-![Screenshot 2](https://robin-beckmann.de/_next/image?url=%2Fimages%2Fprojects%2Fweatherapp%2Fimage2.jpg&w=128&q=75)
-![Screenshot 3](https://robin-beckmann.de/_next/image?url=%2Fimages%2Fprojects%2Fweatherapp%2Fimage3.jpg&w=128&q=75)
+![Screenshot 1](https://robin-beckmann.de/_next/image?url=%2Fimages%2Fprojects%2Fweatherapp%2Fimage1.jpg&w=256&q=75)
+![Screenshot 2](https://robin-beckmann.de/_next/image?url=%2Fimages%2Fprojects%2Fweatherapp%2Fimage2.jpg&w=256&q=75)
+![Screenshot 3](https://robin-beckmann.de/_next/image?url=%2Fimages%2Fprojects%2Fweatherapp%2Fimage3.jpg&w=256&q=75)
 
 ## Backend
 
