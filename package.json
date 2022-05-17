@@ -6,6 +6,8 @@
     "start": "expo start",
     "dev": "expo start --dev-client",
     "build": "eas build --profile development --platform all",
+    "appios": "eas build --profile preview --platform ios",
+    "appandroid": "eas build --profile preview --platform android",
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web"
